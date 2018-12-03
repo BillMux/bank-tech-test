@@ -17,15 +17,30 @@ irb
 ```
 
 ```
-load src/account.rb
+load 'src/account.rb'
 ```
 
 ```
-bank = Account.new
+account = Account.new
 ```
 
+To make a deposit:
 
+```
+account.deposit(integer)
+```
 
+To make a withdrawal:
+
+```
+account.withdraw(integer)
+```
+
+To display full bank statement:
+
+```
+account.print_statement
+```
 
 
 ## User Stories
