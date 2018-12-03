@@ -1,8 +1,9 @@
 class Account
-  attr_reader :balance
+  attr_reader :balance, :statement
 
   def initialize
     @balance = 0
+    @statement = ['Date', 'In', 'Out', 'Balance']
   end
 
   def deposit(amount)

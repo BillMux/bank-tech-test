@@ -1,4 +1,5 @@
 require_relative '../src/account.rb'
+require 'terminal-table'
 
 describe Account do
 
@@ -15,6 +16,15 @@ describe Account do
     subject.deposit(1000)
     subject.withdraw(100)
     expect(subject.balance).to eq 900
+  end
+
+  describe 'statement' do
+    it 'is a table containing headers' do
+      expect(subject.statement[0]).to eq 'Date'
+      expect(subject.statement[1]).to eq 'In'
+      expect(subject.statement[2]).to eq 'Out'
+      expect(subject.statement[3]).to eq 'Balance'
+    end
   end
 
 end
