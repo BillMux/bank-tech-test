@@ -20,11 +20,12 @@ describe Account do
 
   describe 'statement' do
     it 'is a table containing headers' do
-      expect(subject.statement[0]).to eq 'Date'
-      expect(subject.statement[1]).to eq 'In'
-      expect(subject.statement[2]).to eq 'Out'
-      expect(subject.statement[3]).to eq 'Balance'
+      expect(subject.head[0]).to eq 'Date'
+      expect(subject.head[1]).to eq 'In'
+      expect(subject.head[2]).to eq 'Out'
+      expect(subject.head[3]).to eq 'Balance'
     end
+    # WRITE MORE TESTS!!
   end
 
 end
