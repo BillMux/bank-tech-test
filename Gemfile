@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rubocop'
 gem 'terminal-table'
 
 group :test do
   gem 'rspec'
+  gem 'rubocop'
   gem 'simplecov', require: false
-  gem 'simplecov-console'
+  gem 'simplecov-console', require: false
 end
