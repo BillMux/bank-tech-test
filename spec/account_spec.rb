@@ -1,7 +1,4 @@
 require_relative '../src/account.rb'
-require 'simplecov'
-require 'simplecov-console'
-require 'terminal-table'
 
 describe Account do
   it 'starts with a balance of zero' do
