@@ -23,6 +23,5 @@ describe Account do
       expect(subject.head[2]).to eq 'Out'
       expect(subject.head[3]).to eq 'Balance'
     end
-    # WRITE MORE TESTS!!
   end
 end
