@@ -34,6 +34,12 @@ class Account # :nodoc:
     end
   end
 
+  def print_statement
+    @statement.display
+  end
+
+  private
+
   def insufficient_funds
     raise 'Insufficient funds!'
   end
@@ -42,7 +48,4 @@ class Account # :nodoc:
     raise 'Please try an integer.'
   end
 
-  def print_statement
-    @statement.display
-  end
 end
