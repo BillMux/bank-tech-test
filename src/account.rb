@@ -47,5 +47,4 @@ class Account # :nodoc:
   def string_error
     raise 'Please try an integer.'
   end
-
 end
