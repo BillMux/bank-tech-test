@@ -1,6 +1,5 @@
 require_relative '../src/statement'
 
-
 describe Statement do
   it 'is a table containing headers' do
     expect(subject.header[0]).to eq 'Date'

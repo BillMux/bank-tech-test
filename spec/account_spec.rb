@@ -2,9 +2,6 @@ require_relative '../src/account'
 require_relative '../src/transaction'
 
 describe Account do
-  let(:statement) { double(:statement) }
-  let(:transaction) { double(:transaction) }
-
   it 'starts with a balance of zero' do
     expect(subject.balance).to eq 0
   end
@@ -20,20 +17,17 @@ describe Account do
     expect(subject.balance).to eq 900
   end
 
-  it 'cannot accept a string as deposit' do
-    expect{ subject.deposit('cheese') }.to raise_error(
-      "Sorry, you cannot deposit 'cheese'.\nPlease try an integer."
+  it 'cannot accept a string as transaction' do
+    expect { subject.deposit('cheese') }.to raise_error(
+      'Please try an integer.'
     )
-  end
-
-  it 'cannot accept a string as withdrawal' do
-    expect{ subject.withdraw('cheese') }.to raise_error(
-      "Sorry, you cannot withdraw 'cheese'.\nPlease try an integer."
+    expect { subject.withdraw('cheese') }.to raise_error(
+      'Please try an integer.'
     )
   end
 
   it 'cannot withdraw more than remaining balance' do
     subject.deposit(500)
-    expect{ subject.withdraw(600) }.to raise_error('Insufficient funds')
+    expect { subject.withdraw(600) }.to raise_error('Insufficient funds!')
   end
 end
