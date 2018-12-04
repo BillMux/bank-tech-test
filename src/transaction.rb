@@ -2,14 +2,10 @@ require_relative 'account'
 require 'time'
 
 class Transaction
-  attr_reader :balance
-  
+  attr_reader :amount, :balance
+
   def initialize(amount, balance)
     @amount = amount
-    @balance = balance
-  end
-
-  def update_balance
-    @balance += @amount
+    @balance = balance + amount
   end
 end

@@ -1,6 +1,5 @@
 require_relative 'statement'
 require_relative 'transaction'
-require 'terminal-table'
 require 'time'
 
 class Account
@@ -13,16 +12,14 @@ class Account
 
   def deposit(amount)
     transaction = Transaction.new(amount, @balance)
-    transaction.update_balance
-    @statement.new_row([Time.now.strftime('%H:%M, %e %^b %Y'), amount, 0, @balance])
     @balance = transaction.balance
+    @statement.new_row([Time.now.strftime('%H:%M, %e %^b %Y'), amount, 0, @balance])
   end
 
   def withdraw(amount)
     transaction = Transaction.new(-amount, @balance)
-    transaction.update_balance
-    @statement.new_row([Time.now.strftime('%H:%M, %e %^b %Y'), 0, amount, @balance])
     @balance = transaction.balance
+    @statement.new_row([Time.now.strftime('%H:%M, %e %^b %Y'), 0, amount, @balance])
   end
 
   def print_statement
