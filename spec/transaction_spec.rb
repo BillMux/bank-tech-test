@@ -1,18 +1,19 @@
 require_relative '../src/transaction'
-require_relative '../src/account'
 
 describe Transaction do
-  let(:account) { Account.new }
-  let(:statement) { Statement.new }
+  let(:transaction_1) { Transaction.new(100, 0) }
+  let(:transaction_2) { Transaction.new(-100, 1000) }
 
-  it 'takes a deposit' do
-    account.deposit(100)
-    expect(account.balance).to eq 100
+  describe 'after deposit' do
+    it 'returns amount to account' do
+      expect(transaction_1.balance).to eq 100
+    end
   end
 
-  it 'gives a withdrawal' do
-    account.deposit(1000)
-    account.withdraw(100)
-    expect(account.balance).to eq 900
+  describe 'after withdrawal' do
+    it 'returns amount to account' do
+      expect(transaction_2.balance).to eq 900
+    end
   end
+
 end
