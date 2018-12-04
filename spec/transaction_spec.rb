@@ -15,5 +15,4 @@ describe Transaction do
       expect(transaction_2.balance).to eq 900
     end
   end
-
 end
