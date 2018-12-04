@@ -21,13 +21,23 @@ class Account
   end
 
   def withdraw(amount)
-    if amount.is_a? Integer
+    if (amount.is_a? Integer) && @balance >= amount
       transaction = Transaction.new(-amount, @balance)
       @balance = transaction.balance
       @statement.new_row([Time.now.strftime('%H:%M, %e %^b %Y'), 0, amount, @balance])
+    elsif !(amount.is_a? Integer)
+      string_error(amount)
     else
-      fail "Sorry, you cannot withdraw '#{amount}'.\nPlease try an integer."
+      insufficient_funds
     end
+  end
+
+  def insufficient_funds
+    raise "Insufficient funds"
+  end
+
+  def string_error(arg)
+    raise "Sorry, you cannot withdraw '#{arg}'.\nPlease try an integer."
   end
 
   def print_statement
