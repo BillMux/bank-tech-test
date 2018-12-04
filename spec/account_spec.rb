@@ -22,11 +22,18 @@ describe Account do
 
   it 'cannot accept a string as deposit' do
     expect{ subject.deposit('cheese') }.to raise_error(
-      "Sorry, you cannot deposit 'cheese'.\nPlease try an integer.")
+      "Sorry, you cannot deposit 'cheese'.\nPlease try an integer."
+    )
   end
 
   it 'cannot accept a string as withdrawal' do
     expect{ subject.withdraw('cheese') }.to raise_error(
-      "Sorry, you cannot withdraw 'cheese'.\nPlease try an integer.")
+      "Sorry, you cannot withdraw 'cheese'.\nPlease try an integer."
+    )
+  end
+
+  it 'cannot withdraw more than remaining balance' do
+    subject.deposit(500)
+    expect{ subject.withdraw(600) }.to raise_error('Insufficient funds')
   end
 end
