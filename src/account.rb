@@ -12,17 +12,17 @@ class Account
   end
 
   def deposit(amount)
-    @balance += amount
     transaction = Transaction.new(amount, @balance)
     transaction.update_balance
     @statement.new_row([Time.now.strftime('%H:%M, %e %^b %Y'), amount, 0, @balance])
+    @balance = transaction.balance
   end
 
   def withdraw(amount)
-    @balance -= amount
     transaction = Transaction.new(-amount, @balance)
     transaction.update_balance
     @statement.new_row([Time.now.strftime('%H:%M, %e %^b %Y'), 0, amount, @balance])
+    @balance = transaction.balance
   end
 
   def print_statement
