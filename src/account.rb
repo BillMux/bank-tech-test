@@ -16,7 +16,7 @@ class Account
       @balance = transaction.balance
       @statement.new_row([Time.now.strftime('%H:%M, %e %^b %Y'), amount, 0, @balance])
     else
-      fail "Sorry, you cannot deposit '#{amount}'.\nPlease try an integer."
+      string_error('deposit', amount)
     end
   end
 
@@ -26,7 +26,7 @@ class Account
       @balance = transaction.balance
       @statement.new_row([Time.now.strftime('%H:%M, %e %^b %Y'), 0, amount, @balance])
     elsif !(amount.is_a? Integer)
-      string_error(amount)
+      string_error('withdraw', amount)
     else
       insufficient_funds
     end
@@ -36,8 +36,8 @@ class Account
     raise "Insufficient funds"
   end
 
-  def string_error(arg)
-    raise "Sorry, you cannot withdraw '#{arg}'.\nPlease try an integer."
+  def string_error(action, arg)
+    raise "Sorry, you cannot #{action} '#{arg}'.\nPlease try an integer."
   end
 
   def print_statement
