@@ -1,7 +1,4 @@
 require_relative '../src/account.rb'
-require 'simplecov'
-require 'simplecov-console'
-require 'terminal-table'
 
 describe Account do
   it 'starts with a balance of zero' do
@@ -26,6 +23,5 @@ describe Account do
       expect(subject.head[2]).to eq 'Out'
       expect(subject.head[3]).to eq 'Balance'
     end
-    # WRITE MORE TESTS!!
   end
 end
