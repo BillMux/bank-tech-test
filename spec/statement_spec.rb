@@ -8,5 +8,5 @@ describe Statement do
     expect(subject.header[2]).to eq 'Out'
     expect(subject.header[3]).to eq 'Balance'
   end
-    # test stdout after transactions
+  # test stdout after transactions
 end
