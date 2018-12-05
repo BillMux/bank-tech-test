@@ -1,5 +1,4 @@
 require_relative '../lib/account'
-require_relative '../lib/transaction'
 
 describe Account do
   it 'starts with a balance of zero' do
