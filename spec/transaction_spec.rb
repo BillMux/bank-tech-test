@@ -1,4 +1,4 @@
-require_relative '../src/transaction'
+require_relative '../lib/transaction'
 
 describe Transaction do
   let(:transaction_1) { Transaction.new(100, 0) }
