@@ -1,5 +1,5 @@
-require_relative '../src/account'
-require_relative '../src/transaction'
+require_relative '../lib/account'
+require_relative '../lib/transaction'
 
 describe Account do
   it 'starts with a balance of zero' do
@@ -15,15 +15,6 @@ describe Account do
     subject.deposit(1000)
     subject.withdraw(100)
     expect(subject.balance).to eq 900
-  end
-
-  it 'cannot accept a string as transaction' do
-    expect { subject.deposit('cheese') }.to raise_error(
-      'Please try an integer.'
-    )
-    expect { subject.withdraw('cheese') }.to raise_error(
-      'Please try an integer.'
-    )
   end
 
   it 'cannot withdraw more than remaining balance' do
