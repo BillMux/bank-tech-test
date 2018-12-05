@@ -13,7 +13,7 @@ describe Statement do
   end
 
   it 'outputs table to terminal' do
-    expect{ subject.display }.to output(
+    expect { subject.display }.to output(
       "+------+----+-----+---------+
 | Date | In | Out | Balance |
 +------+----+-----+---------+
@@ -23,7 +23,7 @@ describe Statement do
 
   it 'outputs table with transactions' do
     subject.new_row(['13:35,  5 DEC 2018', 1000, 0, 1000])
-    expect{ subject.display }.to output(
+    expect { subject.display }.to output(
       "+--------------------+------+-----+---------+
 | Date               | In   | Out | Balance |
 +--------------------+------+-----+---------+
