@@ -1,5 +1,4 @@
 require_relative 'account'
-require_relative 'transaction'
 require 'terminal-table'
 
 class Statement # :nodoc:
