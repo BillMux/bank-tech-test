@@ -9,7 +9,7 @@ describe Statement do
   end
 
   it 'can output to terminal' do
-    expect{ subject.display }.to output.to_stdout
+    expect { subject.display }.to output.to_stdout
   end
 
   it 'outputs table to terminal' do
