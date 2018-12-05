@@ -4,7 +4,7 @@
 
 You will be able to interact with this project, using a REPL, as if it were a bank. You should be able to make withdrawals, deposits and view a full bank statement which contains a full history of transactions.
 
-![screenshot](images/bank_screenshot.png)
+![screenshot](images/bank-screenshot.png)
 
 ## Approach
 
@@ -92,7 +92,7 @@ irb
 ```
 
 ```
-load 'src/account.rb'
+load 'lib/account.rb'
 ```
 
 ```
