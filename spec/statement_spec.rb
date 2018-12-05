@@ -20,4 +20,15 @@ describe Statement do
 +------+----+-----+---------+"
     ).to_stdout
   end
+
+  it 'outputs table with transactions' do
+    subject.new_row(['13:35,  5 DEC 2018', 1000, 0, 1000])
+    expect{ subject.display }.to output(
+      "+--------------------+------+-----+---------+
+| Date               | In   | Out | Balance |
++--------------------+------+-----+---------+
+| 13:35,  5 DEC 2018 | 1000 | 0   | 1000    |
++--------------------+------+-----+---------+"
+    ).to_stdout
+  end
 end
