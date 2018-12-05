@@ -1,4 +1,4 @@
-require_relative '../src/statement'
+require_relative '../lib/statement'
 
 describe Statement do
   it 'is a table containing headers' do
@@ -7,5 +7,17 @@ describe Statement do
     expect(subject.header[2]).to eq 'Out'
     expect(subject.header[3]).to eq 'Balance'
   end
-  # test stdout after transactions
+
+  it 'can output to terminal' do
+    expect{ subject.display }.to output.to_stdout
+  end
+
+  it 'outputs table to terminal' do
+    expect{ subject.display }.to output(
+      "+------+----+-----+---------+
+| Date | In | Out | Balance |
++------+----+-----+---------+
++------+----+-----+---------+"
+    ).to_stdout
+  end
 end
