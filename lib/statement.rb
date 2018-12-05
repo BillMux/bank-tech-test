@@ -1,7 +1,8 @@
 require_relative 'account'
 require 'terminal-table'
 
-class Statement # :nodoc:
+# statement class
+class Statement
   attr_reader :statement, :header
 
   def initialize

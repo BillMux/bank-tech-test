@@ -2,7 +2,8 @@ require_relative 'statement'
 require_relative 'transaction'
 require 'time'
 
-class Account # :nodoc:
+# account class
+class Account
   attr_reader :balance
 
   def initialize

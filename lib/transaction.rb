@@ -1,7 +1,8 @@
 require_relative 'account'
 require 'time'
 
-class Transaction # :nodoc:
+# transaction class
+class Transaction
   attr_reader :amount, :balance
 
   def initialize(amount, balance)
