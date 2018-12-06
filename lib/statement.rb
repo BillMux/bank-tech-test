@@ -1,4 +1,3 @@
-require_relative 'account'
 require 'terminal-table'
 
 # statement class

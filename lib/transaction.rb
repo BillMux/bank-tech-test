@@ -1,6 +1,3 @@
-require_relative 'account'
-require 'time'
-
 # transaction class
 class Transaction
   attr_reader :amount, :balance
