@@ -1,10 +1,60 @@
 # Bank Tech Test
 
+
 ## Project Outline
 
-You will be able to interact with this project, using a REPL, as if it were a bank. You should be able to make withdrawals, deposits and view a full bank statement which contains a full history of transactions.
+You will be able to interact with this project, using IRB, as if it were a bank. You should be able to make withdrawals, deposits and view a full bank statement which contains a full history of transactions.
 
 ![screenshot](images/bank-screenshot.png)
+
+
+## How to use:
+
+Clone this repo
+
+Open your terminal
+
+Run the following commands:
+
+```
+irb
+```
+
+```
+load 'lib/account.rb'
+```
+
+```
+account = Account.new
+```
+
+To make a deposit:
+
+```
+account.deposit(integer)
+```
+
+To make a withdrawal:
+
+```
+account.withdraw(integer)
+```
+
+To display full bank statement:
+
+```
+account.print_statement
+```
+
+
+## How to run tests
+
+Run:
+
+```
+rspec
+```
+
 
 ## Approach
 
@@ -59,6 +109,7 @@ display
 ```
 prints out the table to the terminal
 
+
 ## User Stories
 
 ```
@@ -77,50 +128,4 @@ I want to withdraw funds from my account
 As a customer
 So that I can keep an eye on my balance and transactions
 I want to have access to a bank statement
-```
-
-## How to use:
-
-Clone this repo
-
-Open your terminal
-
-Run the following commands:
-
-```
-irb
-```
-
-```
-load 'lib/account.rb'
-```
-
-```
-account = Account.new
-```
-
-To make a deposit:
-
-```
-account.deposit(integer)
-```
-
-To make a withdrawal:
-
-```
-account.withdraw(integer)
-```
-
-To display full bank statement:
-
-```
-account.print_statement
-```
-
-## How to run tests
-
-Run:
-
-```
-rspec
 ```
