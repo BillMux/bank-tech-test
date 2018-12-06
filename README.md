@@ -129,3 +129,7 @@ As a customer
 So that I can keep an eye on my balance and transactions
 I want to have access to a bank statement
 ```
+
+## Testing and Coverage
+
+This project has been tested with rspec, simplecov and rubocop. All tests are passing with 100% coverage and linting test detects no offences.
