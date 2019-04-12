@@ -8,10 +8,6 @@ describe Statement do
     expect(subject.header[3]).to eq 'Balance'
   end
 
-  it 'can output to terminal' do
-    expect { subject.display }.to output.to_stdout
-  end
-
   it 'outputs table to terminal' do
     expect { subject.display }.to output(
       "+------+----+-----+---------+
