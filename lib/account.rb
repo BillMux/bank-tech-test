@@ -12,8 +12,7 @@ class Account
   end
 
   def deposit(amount)
-    transaction = Transaction.new(amount, @balance)
-    @balance = transaction.balance
+    transact(amount)
     @statement.new_row(
       [Time.now.strftime('%H:%M, %e %^b %Y'), amount, 0, @balance]
     )
@@ -21,8 +20,7 @@ class Account
 
   def withdraw(amount)
     if @balance >= amount
-      transaction = Transaction.new(-amount, @balance)
-      @balance = transaction.balance
+      transact(-amount)
       @statement.new_row(
         [Time.now.strftime('%H:%M, %e %^b %Y'), 0, amount, @balance]
       )
@@ -36,6 +34,11 @@ class Account
   end
 
   private
+
+  def transact(amount)
+    transaction = Transaction.new(amount, @balance)
+    @balance = transaction.balance
+  end
 
   def insufficient_funds
     raise 'Insufficient funds!'
